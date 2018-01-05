@@ -126,7 +126,7 @@ public class AdminController {
     @RequestMapping(value = "/removeStudent", method = {RequestMethod.GET})
     private String removeStudent(Integer id) throws Exception {
         if (id == null) {
-            //加入没有带学生id就进来的话就返回学生显示页面
+            //如果没有带学生id就进来的话就返回学生显示页面
             return "admin/showStudent";
         }
         studentService.removeById(id);
