@@ -20,4 +20,5 @@ public interface SelectedcourseMapper {
     int updateByExampleSelective(@Param("record") Selectedcourse record, @Param("example") SelectedcourseExample example);
 
     int updateByExample(@Param("record") Selectedcourse record, @Param("example") SelectedcourseExample example);
+
 }

@@ -137,4 +137,13 @@ public class TeacherServiceImpl implements TeacherService {
         }
         return teacherCustomsList;
     }
+
+    public Teacher profile(int userid) throws Exception {
+        return teacherMapper.selectByPrimaryKey(userid);
+    }
+
+    public int profileUpdate(Teacher teacher) throws Exception {
+        System.out.println(teacher.getUsername());
+        return teacherMapper.updateByPrimaryKeySelective(teacher);
+    }
 }

@@ -1,10 +1,7 @@
 package com.system.controller;
 
 import com.system.exception.CustomException;
-import com.system.po.CourseCustom;
-import com.system.po.PagingVO;
-import com.system.po.SelectedCourseCustom;
-import com.system.po.StudentCustom;
+import com.system.po.*;
 import com.system.service.CourseService;
 import com.system.service.SelectedCourseService;
 import com.system.service.StudentService;
@@ -13,6 +10,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -127,5 +125,29 @@ public class StudentController {
         return "student/passwordRest";
     }
 
+    //个人信息
+    @RequestMapping(value = "/profile")
+    public String profile(Model model) throws Exception {
+        Subject subject = SecurityUtils.getSubject();
+        String username = (String) subject.getPrincipal();
+        Student student = studentService.profile(Integer.parseInt(username));
+        model.addAttribute("student", student);
+        return "student/profile";
+    }
+
+    //更新个人信息
+    @RequestMapping(value = "/profile_update")
+    public String profileUpdate(Model model, @RequestParam("userName") String username, @RequestParam("sex") String sex, @RequestParam("collegeID") int collegeid) throws Exception {
+        Subject subject = SecurityUtils.getSubject();
+        String userid = (String) subject.getPrincipal();
+        Student student = new Student();
+        student.setUserid(Integer.parseInt(userid));
+        student.setUsername(username);
+        student.setSex(sex);
+        student.setCollegeid(collegeid);
+        int result = studentService.profileUpdate(student);
+        System.out.println(result);
+        return profile(model);
+    }
 
 }

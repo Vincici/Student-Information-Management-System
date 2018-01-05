@@ -31,9 +31,11 @@
         <div class="col-md-4" id="login-box">
             <form class="form-horizontal" role="form" action="/login" id="from1" method="post">
                 <div class="form-group">
-                    <label for="firstname" class="col-sm-3 control-label">用户id</label>
+                    <center><h2>NIIT教务管理系统</h2></center>
+                    <br/>
+                    <label for="firstname" class="col-sm-3 control-label">用户ID</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" id="userID" placeholder="请输入名字" name="username">
+                        <input type="text" class="form-control" id="userID" placeholder="请输入您的用户ID" name="username">
                     </div>
                 </div>
                 <div class="form-group">
@@ -42,27 +44,33 @@
                         <input type="password" class="form-control" id="password" placeholder="请输入密码" name="password">
                     </div>
                 </div>
-                <%--<div class="form-group">--%>
-                <%--<div class="col-sm-offset-2 col-sm-10">--%>
-                <%--<div class="checkbox">--%>
-                <%--<label class="checkbox-inline">--%>
-                <%--<input type="radio" name="role" value="1" checked>管理员--%>
-                <%--</label>--%>
-                <%--<label class="checkbox-inline">--%>
-                <%--<input type="radio" name="role" value="2">老师--%>
-                <%--</label>--%>
-                <%--<label class="checkbox-inline">--%>
-                <%--<input type="radio" name="role" value="3">学生--%>
-                <%--</label>--%>
-                <%--</div>--%>
-                <%--</div>--%>
-                <%--</div>--%>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="checkbox">
+                            <label class="checkbox-inline">
+                                <input type="radio" name="role" value="1" checked>管理员
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="radio" name="role" value="2">老师
+                            </label>
+                            <label class="checkbox-inline">
+                                <input type="radio" name="role" value="3">学生
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <div class="form-group pull-right" style="margin-right: 15px;">
                     <div class="col-sm-offset-2 col-sm-10">
                         <button type="submit" class="btn btn-default btn-info">登录</button>
                     </div>
                 </div>
             </form>
+            <br/>
+            <br/>
+            <h6>管理员账号：admin</h6>
+            <h6>老师账号：1001至1003任意</h6>
+            <h6>学生账号：10001-10006任意</h6>
+            <h6>默认密码均为123</h6>
         </div>
         <div class="col-md-4"></div>
     </div>

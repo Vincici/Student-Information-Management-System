@@ -2,6 +2,7 @@ package com.system.mapper;
 
 import com.system.po.Student;
 import com.system.po.StudentExample;
+import com.system.po.Teacher;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -28,4 +29,5 @@ public interface StudentMapper {
     int updateByPrimaryKeySelective(Student record);
 
     int updateByPrimaryKey(Student record);
+
 }

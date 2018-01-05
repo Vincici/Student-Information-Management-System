@@ -14,6 +14,8 @@
         <li><a href="/logout">退出系统
             <sapn class="glyphicon glyphicon-log-out pull-right"/>
         </a></li>
-        <li class="disabled"><a href="##">Responsive</a></li>
+        <li class="disabled">
+            <a href="##">QDU-NIIT</a>
+        </li>
     </ul>
 </div>

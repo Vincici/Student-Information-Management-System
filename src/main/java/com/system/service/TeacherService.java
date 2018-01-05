@@ -1,5 +1,6 @@
 package com.system.service;
 
+import com.system.po.Teacher;
 import com.system.po.TeacherCustom;
 
 import java.util.List;
@@ -32,4 +33,11 @@ public interface TeacherService {
 
     //获取全部教师
     List<TeacherCustom> findAll() throws Exception;
+
+    //获取老师信息
+    Teacher profile(int userid) throws Exception;
+
+    //更新老师信息
+    int profileUpdate(Teacher teacher) throws Exception;
+
 }

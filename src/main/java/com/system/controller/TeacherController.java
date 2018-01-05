@@ -2,6 +2,7 @@ package com.system.controller;
 
 import com.system.po.CourseCustom;
 import com.system.po.SelectedCourseCustom;
+import com.system.po.Teacher;
 import com.system.service.CourseService;
 import com.system.service.SelectedCourseService;
 import com.system.service.TeacherService;
@@ -11,8 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -80,6 +83,33 @@ public class TeacherController {
     @RequestMapping(value = "/passwordRest")
     public String passwordRest() throws Exception {
         return "teacher/passwordRest";
+    }
+
+    //个人信息
+    @RequestMapping(value = "/profile")
+    public String profile(Model model) throws Exception {
+        Subject subject = SecurityUtils.getSubject();
+        String username = (String) subject.getPrincipal();
+        Teacher teacher = teacherService.profile(Integer.parseInt(username));
+        model.addAttribute("teacher", teacher);
+        return "teacher/profile";
+    }
+
+    //更新个人信息
+    @RequestMapping(value = "/profile_update")
+    public String profileUpdate(Model model, @RequestParam("userName") String username, @RequestParam("sex") String sex, @RequestParam("degree") String degree, @RequestParam("title") String title, @RequestParam("collegeID") int collegeid) throws Exception {
+        Subject subject = SecurityUtils.getSubject();
+        String userid = (String) subject.getPrincipal();
+        Teacher teacher = new Teacher();
+        teacher.setUserid(Integer.parseInt(userid));
+        teacher.setUsername(username);
+        teacher.setSex(sex);
+        teacher.setDegree(degree);
+        teacher.setTitle(title);
+        teacher.setCollegeid(collegeid);
+        int result = teacherService.profileUpdate(teacher);
+        System.out.println(result);
+        return profile(model);
     }
 
 }

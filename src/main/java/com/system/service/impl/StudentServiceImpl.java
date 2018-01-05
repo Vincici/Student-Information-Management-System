@@ -124,4 +124,12 @@ public class StudentServiceImpl implements StudentService {
         }
         return studentCustom;
     }
+
+    public Student profile(int userid) throws Exception {
+        return studentMapper.selectByPrimaryKey(userid);
+    }
+
+    public int profileUpdate(Student student) throws Exception {
+        return studentMapper.updateByPrimaryKeySelective(student);
+    }
 }

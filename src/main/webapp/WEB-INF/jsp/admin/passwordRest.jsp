@@ -69,6 +69,7 @@
 </body>
 <script>
     $("#nav li:nth-child(5)").addClass("active")
+
     function check() {
         if (reset.oldPassword.value == "" || reset.oldPassword.value == null) {
             alert("请输入旧账户密码");

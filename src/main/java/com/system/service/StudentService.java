@@ -1,5 +1,6 @@
 package com.system.service;
 
+import com.system.po.Student;
 import com.system.po.StudentCustom;
 
 import java.util.List;
@@ -33,4 +34,10 @@ public interface StudentService {
     // 一对多查询，查询该学生的选课信息
     StudentCustom findStudentAndSelectCourseListByName(String name) throws Exception;
 
+
+    //获取学生信息
+    Student profile(int userid) throws Exception;
+
+    //更新学生信息
+    int profileUpdate(Student student) throws Exception;
 }

@@ -16,7 +16,7 @@
             <div class="navbar navbar-default" role="navigation">
                 　
                 <div class="navbar-header">
-                    　 <a href="##" class="navbar-brand">教务信息查询系统(管理员)</a>
+                    　 <a href="##" class="navbar-brand">NIIT教务信息管理系统(管理员端)</a>
                     　
                 </div>
                 <form action="##" class="navbar-form navbar-right" rol="search">
@@ -24,7 +24,7 @@
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
                                 data-toggle="dropdown" style="margin-right: 20px; ">
                             <%--登录用户名--%>
-                            <span class="glyphicon glyphicon-user"><shiro:principal/></span>
+                            <span class="glyphicon glyphicon-user"> 您好：<shiro:principal/></span>
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">

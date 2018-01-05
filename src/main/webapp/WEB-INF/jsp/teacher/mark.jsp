@@ -75,6 +75,7 @@
 </body>
 <script>
     $("#nav li:nth-child(1)").addClass("active")
+
     function check() {
         if (reset.mark.value == "" || reset.mark.value == null) {
             alert("请输入成绩");
