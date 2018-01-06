@@ -17,14 +17,13 @@ public class CustomDateConverter implements Converter<String, Date> {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         try {
-            //转成直接返回
-            return simpleDateFormat.parse(s);
+            return simpleDateFormat.parse(s);//转成直接返回
         } catch (ParseException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
-        //如果参数绑定失败返回null
         return null;
+        //如果参数绑定失败返回null
     }
 }
