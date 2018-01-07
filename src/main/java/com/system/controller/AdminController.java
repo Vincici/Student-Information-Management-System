@@ -92,7 +92,7 @@ public class AdminController {
         return "redirect:/admin/showStudent";
     }
 
-    // 修改学生信息页面显示
+    // 修改学生的信息页面显示
     @RequestMapping(value = "/editStudent", method = {RequestMethod.GET})
     public String editStudentUI(Integer id, Model model) throws Exception {
         if (id == null) {
