@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
- * Created by Vinci on 2017/6/30.
+ * Created by Vinci on 2017/12/30.
  */
 @Controller
 public class LoginController {
