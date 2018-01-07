@@ -13,7 +13,12 @@ import java.util.List;
 
 
 /**
+<<<<<<< HEAD
  * Created by Vinci on 2017/12/31
+=======
+ *
+ * Created by Vinci on 2017/12/30.
+>>>>>>> origin/master
  */
 @Controller
 @RequestMapping("/admin")

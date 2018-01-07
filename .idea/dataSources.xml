@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+<<<<<<< HEAD
     <data-source source="LOCAL" name="examination_system@vpn.daddywolf.cn" uuid="a754eabb-fa52-4a6f-8472-074a10e51aa3">
+=======
+    <data-source source="LOCAL" name="examination_system@vpn.daddywolf.cn" uuid="07ed24e9-6f82-42d2-a54b-c440afbdf00a">
+>>>>>>> origin/master
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
