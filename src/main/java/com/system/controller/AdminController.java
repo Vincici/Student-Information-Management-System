@@ -96,7 +96,7 @@ public class AdminController {
     @RequestMapping(value = "/editStudent", method = {RequestMethod.GET})
     public String editStudentUI(Integer id, Model model) throws Exception {
         if (id == null) {
-            //加入没有带学生id就进来的话就返回学生显示页面
+            //增加没有带学生id就进来的话就返回学生显示页面
             return "redirect:/admin/showStudent";
         }
         StudentCustom studentCustom = studentService.findById(id);
