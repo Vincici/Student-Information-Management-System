@@ -4,6 +4,7 @@ import com.system.mapper.CollegeMapper;
 import com.system.mapper.StudentMapper;
 import com.system.mapper.StudentMapperCustom;
 import com.system.po.*;
+import com.system.service.StudentService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
