@@ -2,7 +2,6 @@ package com.system.service.impl;
 
 import com.system.po.Student;
 import com.system.po.StudentCustom;
-import com.system.service.StudentService;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
