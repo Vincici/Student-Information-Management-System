@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="examination_system@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="examination_system">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="flower"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="jkxyshsflower"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="sys"/>
+    <schema id="9" parent="1" name="xianhua209"/>
+    <table id="10" parent="2" name="college"/>
+    <table id="11" parent="2" name="course"/>
+    <table id="12" parent="2" name="role"/>
+    <table id="13" parent="2" name="selectedcourse"/>
+    <table id="14" parent="2" name="student"/>
+    <table id="15" parent="2" name="teacher"/>
+    <table id="16" parent="2" name="userlogin"/>
+    <column id="17" parent="10" name="collegeID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="10" name="collegeName">
+      <Position>2</Position>
+      <Comment>课程名</Comment>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="19" parent="10" name="PRIMARY">
+      <ColNames>collegeID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="20" parent="11" name="courseID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="11" name="courseName">
+      <Position>2</Position>
+      <Comment>课程名称</Comment>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="11" name="teacherID">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="11" name="courseTime">
+      <Position>4</Position>
+      <Comment>开课时间</Comment>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="24" parent="11" name="classRoom">
+      <Position>5</Position>
+      <Comment>开课地点</Comment>
+      <DataType>varchar(200)|0</DataType>
+    </column>
+    <column id="25" parent="11" name="courseWeek">
+      <Position>6</Position>
+      <Comment>学时</Comment>
+      <DataType>int(200)|0</DataType>
+    </column>
+    <column id="26" parent="11" name="courseType">
+      <Position>7</Position>
+      <Comment>课程类型</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="27" parent="11" name="collegeID">
+      <Position>8</Position>
+      <Comment>所属院系</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="11" name="score">
+      <Position>9</Position>
+      <Comment>学分</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="29" parent="11" name="collegeID">
+      <ColNames>collegeID</ColNames>
+    </index>
+    <index id="30" parent="11" name="teacherID">
+      <ColNames>teacherID</ColNames>
+    </index>
+    <key id="31" parent="11" name="PRIMARY">
+      <ColNames>courseID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="32" parent="11" name="course_ibfk_2">
+      <ColNames>teacherID</ColNames>
+      <RefSchemaName>examination_system</RefSchemaName>
+      <RefTableName>teacher</RefTableName>
+      <RefColNames>userID</RefColNames>
+    </foreign-key>
+    <foreign-key id="33" parent="11" name="course_ibfk_1">
+      <ColNames>collegeID</ColNames>
+      <RefSchemaName>examination_system</RefSchemaName>
+      <RefTableName>college</RefTableName>
+      <RefColNames>collegeID</RefColNames>
+    </foreign-key>
+    <column id="34" parent="12" name="roleID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="12" name="roleName">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="12" name="permissions">
+      <Position>3</Position>
+      <Comment>权限</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <key id="37" parent="12" name="PRIMARY">
+      <ColNames>roleID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="38" parent="13" name="courseID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="39" parent="13" name="studentID">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="13" name="mark">
+      <Position>3</Position>
+      <Comment>成绩</Comment>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="41" parent="13" name="courseID">
+      <ColNames>courseID</ColNames>
+    </index>
+    <index id="42" parent="13" name="studentID">
+      <ColNames>studentID</ColNames>
+    </index>
+    <foreign-key id="43" parent="13" name="selectedcourse_ibfk_1">
+      <ColNames>courseID</ColNames>
+      <RefSchemaName>examination_system</RefSchemaName>
+      <RefTableName>course</RefTableName>
+      <RefColNames>courseID</RefColNames>
+    </foreign-key>
+    <foreign-key id="44" parent="13" name="selectedcourse_ibfk_2">
+      <ColNames>studentID</ColNames>
+      <RefSchemaName>examination_system</RefSchemaName>
+      <RefTableName>student</RefTableName>
+      <RefColNames>userID</RefColNames>
+    </foreign-key>
+    <column id="45" parent="14" name="userID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="46" parent="14" name="userName">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="14" name="sex">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="48" parent="14" name="birthYear">
+      <Position>4</Position>
+      <Comment>出生日期</Comment>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="49" parent="14" name="grade">
+      <Position>5</Position>
+      <Comment>入学时间</Comment>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="50" parent="14" name="collegeID">
+      <Position>6</Position>
+      <Comment>院系id</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="51" parent="14" name="collegeID">
+      <ColNames>collegeID</ColNames>
+    </index>
+    <key id="52" parent="14" name="PRIMARY">
+      <ColNames>userID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="53" parent="14" name="student_ibfk_1">
+      <ColNames>collegeID</ColNames>
+      <RefSchemaName>examination_system</RefSchemaName>
+      <RefTableName>college</RefTableName>
+      <RefColNames>collegeID</RefColNames>
+    </foreign-key>
+    <column id="54" parent="15" name="userID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="55" parent="15" name="userName">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="15" name="sex">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="57" parent="15" name="birthYear">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="15" name="degree">
+      <Position>5</Position>
+      <Comment>学历</Comment>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="59" parent="15" name="title">
+      <Position>6</Position>
+      <Comment>职称</Comment>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="60" parent="15" name="grade">
+      <Position>7</Position>
+      <Comment>入职时间</Comment>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="61" parent="15" name="collegeID">
+      <Position>8</Position>
+      <Comment>院系</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="62" parent="15" name="collegeID">
+      <ColNames>collegeID</ColNames>
+    </index>
+    <key id="63" parent="15" name="PRIMARY">
+      <ColNames>userID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="64" parent="15" name="teacher_ibfk_1">
+      <ColNames>collegeID</ColNames>
+      <RefSchemaName>examination_system</RefSchemaName>
+      <RefTableName>college</RefTableName>
+      <RefColNames>collegeID</RefColNames>
+    </foreign-key>
+    <column id="65" parent="16" name="userID">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="66" parent="16" name="userName">
+      <Position>2</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="16" name="password">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="16" name="role">
+      <Position>4</Position>
+      <Comment>角色权限</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;2&apos;</DefaultExpression>
+    </column>
+    <index id="69" parent="16" name="role">
+      <ColNames>role</ColNames>
+    </index>
+    <key id="70" parent="16" name="PRIMARY">
+      <ColNames>userID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="71" parent="16" name="userlogin_ibfk_1">
+      <ColNames>role</ColNames>
+      <RefSchemaName>examination_system</RefSchemaName>
+      <RefTableName>role</RefTableName>
+      <RefColNames>roleID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

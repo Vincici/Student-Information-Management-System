@@ -2,6 +2,7 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <data-source source="LOCAL" name="examination_system@vpn.daddywolf.cn" uuid="a754eabb-fa52-4a6f-8472-074a10e51aa3">
 =======
     <data-source source="LOCAL" name="examination_system@vpn.daddywolf.cn" uuid="07ed24e9-6f82-42d2-a54b-c440afbdf00a">
@@ -10,6 +11,13 @@
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://vpn.daddywolf.cn:3306/examination_system</jdbc-url>
+=======
+    <data-source source="LOCAL" name="examination_system@localhost" uuid="5de92001-3df4-4e8f-866a-5783ea151678">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/examination_system</jdbc-url>
+>>>>>>> fix bug
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
