@@ -13,12 +13,7 @@ import java.util.List;
 
 
 /**
-<<<<<<< HEAD
- * Created by Vinci on 2017/12/31
-=======
- *
- * Created by Vinci on 2017/12/30.
->>>>>>> origin/master
+ * Created by Vinci on 2017/6/30.
  */
 @Controller
 @RequestMapping("/admin")
@@ -97,11 +92,11 @@ public class AdminController {
         return "redirect:/admin/showStudent";
     }
 
-    // 修改学生的信息页面显示
+    // 修改学生信息页面显示
     @RequestMapping(value = "/editStudent", method = {RequestMethod.GET})
     public String editStudentUI(Integer id, Model model) throws Exception {
         if (id == null) {
-            //增加没有带学生id就进来的话就返回学生显示页面
+            //加入没有带学生id就进来的话就返回学生显示页面
             return "redirect:/admin/showStudent";
         }
         StudentCustom studentCustom = studentService.findById(id);
@@ -131,7 +126,7 @@ public class AdminController {
     @RequestMapping(value = "/removeStudent", method = {RequestMethod.GET})
     private String removeStudent(Integer id) throws Exception {
         if (id == null) {
-            //如果没有带学生id就进来的话就返回学生显示页面
+            //加入没有带学生id就进来的话就返回学生显示页面
             return "admin/showStudent";
         }
         studentService.removeById(id);

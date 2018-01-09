@@ -27,7 +27,8 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form name="reset" class="form-horizontal" role="form" action="/student/profile_update" id="editfrom"
+                    <form name="reset" class="form-horizontal" role="form" action="/student/profile_update"
+                          id="editfrom"
                           method="post" onsubmit="return check()">
                         <div class="form-group">
                             <label for="userID" class="col-sm-2 control-label">学号</label>
