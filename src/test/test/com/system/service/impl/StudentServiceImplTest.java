@@ -2,6 +2,7 @@ package com.system.service.impl;
 
 import com.system.po.Student;
 import com.system.po.StudentCustom;
+import com.system.service.StudentService;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -10,8 +11,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Vinci on 2017/6/29.
